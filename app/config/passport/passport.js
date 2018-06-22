@@ -16,6 +16,8 @@ module.exports = function (passport, user) {
     },
     function (req, email, password, done) {
 
+      console.log(req.body)
+
       var generateHash = function (password) {
         return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
       };
@@ -59,14 +61,14 @@ module.exports = function (passport, user) {
   //serialize
   passport.serializeUser(function (user, done) {
 
-    done(null, user.id);
+    done(null, user.userid);
 
   });
 
   // deserialize user 
-  passport.deserializeUser(function (id, done) {
+  passport.deserializeUser(function (userid, done) {
 
-    User.findById(id).then(function (user) {
+    User.findById(userid).then(function (user) {
 
       if (user) {
 

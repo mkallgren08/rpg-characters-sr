@@ -6,7 +6,7 @@ var bodyParser = require('body-parser')
 var env = require('dotenv').load();
 var exphbs = require('express-handlebars');
 
-let PORT = 5000
+let PORT = 5000;
 
 //For BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -22,7 +22,8 @@ app.use(passport.session()); // persistent login sessions
  
 app.get('/', function(req, res) {
  
-    res.send('Welcome to Passport with Sequelize');
+    //res.send('Welcome to Passport with Sequelize');
+    res.render("landingpage")
  
 });
  
@@ -49,14 +50,18 @@ models.sequelize.sync().then(function() {
  
 });
 
+//For resource loading
+app.use(express.static("app"))
+
 //For Handlebars
-app.set('views', './app/views')
+app.set('views', './views')
 app.engine('handlebars', exphbs({
     defaultLayout: "main",
 }));
 app.set('view engine', 'handlebars');     
 
-	
+
+
 //Routes
 var authRoute = require('./app/routes/auth.js')(app,passport)
 
