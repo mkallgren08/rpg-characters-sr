@@ -7,34 +7,14 @@ var env = process.env.NODE_ENV || "development";
 //var config = require(path.join(__dirname, '..', 'config', 'config.json'))[env];
 var config = require(__dirname + "/../config/config.json")[env];
 
-// if (env === "development") {
-//   config = {
-//     username: "root",
-
-//     password: process.env.MYSQL_PASS,
-
-//     database: "shadowrun_rpg",
-
-//     host: "127.0.0.1",
-
-//     dialect: "mysql"
-//   }
-
-//   var sequelize = new Sequelize(config.database, config.username, config.password, config);
-// } else {
-  
-// }
-
-if (process.env.NODE_ENV === "development"){
-  var sequelize = new Sequelize(process.env.SHADOWDB_URL)
-} else {
-  var sequelize = new Sequelize(process.env.JAWSDB_URL)
-}
+let connectionURL = process.env.SHADOWDB_URL;
 
 
-console.log(env);
-console.log(config);
+console.log(connectionURL)
 
+var sequelize = new Sequelize(connectionURL)
+
+console.log("The development environment is: " + env);
 
 var db = {};
 

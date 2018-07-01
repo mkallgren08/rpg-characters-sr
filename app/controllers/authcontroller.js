@@ -5,12 +5,12 @@ var exports = module.exports = {}
 let routedest = [
   'signup',
   'signin',
-  //'dashboard',
+  'dashboard',
   'logout'
 ]
 
 for (let i = 0; i < routedest.length; i++) {
-  if (routedest === 'logout') {
+  if (routedest[i] === 'logout') {
     exports[routedest[i]] = function (req, res) {
       req.session.destroy(function (err) {
         if(err){
@@ -30,7 +30,13 @@ for (let i = 0; i < routedest.length; i++) {
         pagelogic: logicURL,
         pagestyle: styleURL
       }
-      res.render(routedest[i], hbsObj)
+      if (routedest[i]!=='signup' || routedest[i]!=='signin' || routedest[i] !== 'logout'){
+        hbsObj.loggedIn = true;
+        res.render(routedest[i], hbsObj)
+      } else {
+        res.render(routedest[i], hbsObj)
+      }
+      
     };
   };
 };
@@ -41,9 +47,9 @@ for (let i = 0; i < routedest.length; i++) {
 // exports.signin = function(req, res) {
 //     res.render('signin');
 // }
-exports.dashboard = function(req, res) {
-    res.render('dashboard');
-}
+// exports.dashboard = function(req, res) {
+//     res.render('dashboard');
+// }
 
 // exports.logout = function (req, res) {
 //   req.session.destroy(function (err) {

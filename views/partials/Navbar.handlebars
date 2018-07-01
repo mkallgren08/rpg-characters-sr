@@ -1,5 +1,12 @@
 <div>
   <h2>This is the Navbar component (will see if it loads properly!</h2>
-  <button> <a href = "/signin" id= "signup" >Sign In</a></button>
-  <button> <a href = "/signup" id= "signin" >Sign Up</a></button>
+  {{#if loggedIn}}
+    <button> <a href="/logout" id = "logout"> Logout</a></button>
+    <button> <a href="" id = ""> Filler Button</a></button>
+    <button> <a href="" id = ""> Filler Button</a></button>
+    <button> <a href="" id = ""> Filler Button</a></button>
+  {{else}}
+    <button> <a href = "/signin" id= "signup" >Sign In</a></button>
+    <button> <a href = "/signup" id= "signin" >Sign Up</a></button>
+  {{/if}}
 </div>
