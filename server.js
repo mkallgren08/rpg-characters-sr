@@ -39,7 +39,7 @@ app.listen(PORT, function(err) {
 //Models
 var models = require("./app/models");
 
-console.log(process.env.JAWSDB_URL)
+//console.log(process.env.JAWSDB_URL)
  
  //Sync Database
 models.sequelize.sync().then(function() {
