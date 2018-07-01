@@ -9,20 +9,9 @@ var env = process.env.NODE_ENV || "development";
 
 let connectionURL = process.env.SHADOWDB_URL;
 
-let config = {
-  username: "jj24xrw3f9ews9y7",
-
-  password: process.env.SHADOWPASS,
-
-  database: "sequelize_passport",
-
-  host: "alv4v3hlsipxnujn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-
-  dialect: "mysql"
-}
-
 
 console.log(connectionURL)
+
 
 var sequelize = new Sequelize(connectionURL)
 
