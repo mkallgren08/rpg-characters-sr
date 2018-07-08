@@ -10,12 +10,12 @@ var env = process.env.NODE_ENV || "development";
 let connectionURL = process.env.SHADOWDB_URL;
 
 
-console.log(connectionURL)
+//console.log(connectionURL)
 
 
 var sequelize = new Sequelize(connectionURL)
 
-console.log("The development environment is: " + env);
+//console.log("The development environment is: " + env);
 
 var db = {};
 

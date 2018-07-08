@@ -1,4 +1,4 @@
-let urlprefix = "/public/components/"
+let urlprefix = "/public/pages/"
 
 var exports = module.exports = {}
 
@@ -6,7 +6,8 @@ let routedest = [
   'signup',
   'signin',
   'dashboard',
-  'logout'
+  'logout',
+  'test'
 ]
 
 for (let i = 0; i < routedest.length; i++) {
@@ -23,12 +24,12 @@ for (let i = 0; i < routedest.length; i++) {
   }
   else {
     exports[routedest[i]] = function (req, res) {
-      let baseURL = urlprefix + "/"+ routedest[i]
-      let logicURL =  baseURL + "/"+ routedest[i] + ".js"
-      let styleURL = baseURL + "/"+ routedest[i] + ".css"
+      // let baseURL = urlprefix + "/"+ routedest[i]
+      // let logicURL =  baseURL + "/"+ routedest[i] + ".js"
+      // let styleURL = baseURL + "/"+ routedest[i] + ".css"
       let hbsObj = {
-        pagelogic: logicURL,
-        pagestyle: styleURL
+        // pagelogic: logicURL,
+        // pagestyle: styleURL
       }
       if (routedest[i]!=='signup' || routedest[i]!=='signin' || routedest[i] !== 'logout'){
         hbsObj.loggedIn = true;
@@ -50,6 +51,9 @@ for (let i = 0; i < routedest.length; i++) {
 // exports.dashboard = function(req, res) {
 //     res.render('dashboard');
 // }
+exports.test = function(req, res) {
+    res.render('test');
+}
 
 // exports.logout = function (req, res) {
 //   req.session.destroy(function (err) {

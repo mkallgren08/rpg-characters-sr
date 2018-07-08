@@ -66,6 +66,8 @@ app.set('view engine', 'handlebars');
 
 //Routes
 var authRoute = require('./app/routes/auth.js')(app,passport)
+console.log("authRoute is: ")
+console.log(authRoute)
 
 //load passport strategies
 require('./app/config/passport/passport.js')(passport, models.user);
