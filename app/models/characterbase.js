@@ -6,7 +6,7 @@ let User = require("./user.js")
 
 module.exports = function(sequelize, Sequelize) {
  
-  const CharacterBase = sequelize.define('characterbase', {
+  const CharacterBase = sequelize.define('CharacterBase', {
 
       characterid: {
           autoIncrement: true,
@@ -29,19 +29,17 @@ module.exports = function(sequelize, Sequelize) {
           notEmpty: true
       },
 
-      about: {
-          type: Sequelize.TEXT
-      },
-
-      email: {
-          type: Sequelize.STRING,
-          validate: {
-              isEmail: true
-          }
-      },
-
 
   });
+
+  CharacterBase.associate = function (models) {
+    models.CharacterBase.belongsTo(models.User, {
+      onDelete: "CASCADE",
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
 
   return CharacterBase;
 
