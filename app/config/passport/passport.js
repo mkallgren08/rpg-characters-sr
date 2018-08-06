@@ -133,6 +133,9 @@ module.exports = function (passport, user) {
 
 
         var userinfo = user.get();
+        console.log('----------------------------')
+        console.log(userinfo)
+        console.log('----------------------------')
         return done(null, userinfo);
 
 

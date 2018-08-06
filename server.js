@@ -38,6 +38,9 @@ app.listen(PORT, function(err) {
 
 //Models
 var models = require("./app/models");
+// console.log('==============================================')
+// console.log(models)
+// console.log('==============================================')
 
 //console.log(process.env.JAWSDB_URL)
  
@@ -65,9 +68,12 @@ app.set('view engine', 'handlebars');
 
 
 //Routes
+//Auth Routes
 var authRoute = require('./app/routes/auth.js')(app,passport)
 console.log("authRoute is: ")
 console.log(authRoute)
+//API Routes
+require('./app/routes/api-routes.js')(app)
 
 //load passport strategies
-require('./app/config/passport/passport.js')(passport, models.user);
+require('./app/config/passport/passport.js')(passport, models.User);

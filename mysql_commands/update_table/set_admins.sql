@@ -1,17 +1,17 @@
-SELECT * FROM users
+SELECT * FROM Users
 -- List the firstname of the user
 WHERE firstname = 'Michael'
 -- List the lastname of the user
 AND lastname = 'Kallgren';
 
-UPDATE users
-SET administrator = 1
+UPDATE Users
+SET administrator = true
 -- List the firstname of the user
 WHERE firstname = 'Michael'
 -- List the lastname of the user
 AND lastname = 'Kallgren';
 
-SELECT * FROM users
+SELECT * FROM Users
 -- List the firstname of the user
 WHERE firstname = 'Michael'
 -- List the lastname of the user

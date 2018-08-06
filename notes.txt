@@ -1,12 +1,14 @@
 =============================================================================
                                 ROUTING
 =============================================================================
-1) Remember that when adding a new route, you have to add the route to two places:
+1) Remember that when adding a new route, you have to add the route 
+  to two places:
   a) The routedest array in './app/controllers/authcontroller.js'
   b) The list of routes in './app.routes/auth.js', in the form of: 
      ----- app.get('/test', isLoggedIn, authController.test)
      for pages that require logging in or
      ----- app.get('/test', authController.test);
      for pages that don't require logging in. 
-2) For post routes, be sure to check the passport.js file under ./app/config/passport
-   for any authentication methods that need to be called.
+2) For post routes, be sure to check the passport.js file under 
+  ./app/config/passportfor any authentication methods that need 
+  to be called.

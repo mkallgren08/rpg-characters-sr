@@ -11,3 +11,8 @@ ALTER TABLE characterbases
 DROP column updatedAt;
 
 SELECT * FROM characterbases;
+
+ALTER TABLE SkillBases
+DROP column createdAt, DROP updatedAt, DROP CharacterSkillChaskillid;
+
+SELECT * FROM characterbases;

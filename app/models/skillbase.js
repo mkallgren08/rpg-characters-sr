@@ -27,17 +27,19 @@ module.exports = function(sequelize, Sequelize) {
           notEmpty: true,
           defaultValue: true
       },
-
+      bookref:{
+        type: Sequelize.INTEGER,
+        notEmpty: false
+      },
       pageref: {
         type: Sequelize.INTEGER,
         notEmpty: false
       },
-
       skilltype: {
         type: Sequelize.STRING,
         notEmpty:true
       }
-
+      
 
   });
 
