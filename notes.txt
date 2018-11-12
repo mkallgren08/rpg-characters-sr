@@ -10,5 +10,23 @@
      ----- app.get('/test', authController.test);
      for pages that don't require logging in. 
 2) For post routes, be sure to check the passport.js file under 
-  ./app/config/passportfor any authentication methods that need 
+  ./app/config/passport for any authentication methods that need 
   to be called.
+3) When passing JSON data from the server to the client via ExpressHbs, make
+  sure that the data is passed into the hbsObject as a string using 
+  JSON.stringify(data) and that on the client, you use {{{triple brackets}}}
+  to prevent HTML encoding from happening - if you don't, you get something 
+  like this:
+    Error 1: 
+      JSONObj = {"attrs":[{"name":"Body"}]}
+      hbsObject={data:JSONObj} ===> let sampleData = {{data}} ===> 
+      let sampleData = [object Object](ERROR)
+    Error 2:
+      JSONObj = {"attrs":[{"name":"Body"}]}
+      hbsObject={data:JSON.stringify(JSONObj)} ===> let sampleData = {{data}} ===> 
+      let sampleData = {&quotattrs&quot:[{&quotname&quot:&quotBody&quot}]}(ERROR)
+    Correct:
+      JSONObj = {"attrs":[{"name":"Body"}]}
+      hbsObject={data:JSON.stringify(JSONObj)} ===> let sampleData = {{{data}}} ===> 
+      let sampleData = {attrs:[{name:"Body"}]} (CORRECT)
+     
