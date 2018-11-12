@@ -1,0 +1,30 @@
+<div>
+  <h2>This is the Navbar component (will see if it loads properly!</h2>
+  {{#if loggedIn}}
+    <button> <a href="/logout" id = "logout"> Logout</a></button>
+    <button> <a href="/test" id = "test"> Test Route</a></button>
+    <button> <a href="/addskills" id = "addskills"> Add Skills to DB</a></button>
+    <button> <a href="" id = ""> Filler Button</a></button>
+  {{else}}
+    <button> <a href = "/signin" id= "signup" >Sign In</a></button>
+    <button> <a href = "/signup" id= "signin" >Sign Up</a></button>
+  {{/if}}
+</div>
+{{log this}}
+
+<script>
+  $(document).ready(function){
+    console.log("Here we go!")
+   /* $.ajax({
+      method: "GET",
+      url: "api/currentUser"
+    }).then(function(){
+      
+    }) */
+  })
+</script>
+<script>
+  console.log(sessionStorage)
+  console.log(document)
+  console.log(window)
+</script>

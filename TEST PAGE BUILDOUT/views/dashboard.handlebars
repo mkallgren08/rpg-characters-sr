@@ -1,0 +1,10 @@
+    <h2>Dashboard</h2>
+    {{#if user}}
+    <h5>Welcome {{user.firstname}}! You are logged in.</h5>
+    {{else}}
+    <h5>Hurray! you are logged in.</h5>
+    {{/if}}
+    
+    {{>Navbar}}
+
+    <button> <a href="/dashboard" id = "dashboard"> Home</a></button>
