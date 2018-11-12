@@ -1,5 +1,26 @@
 {
   "attrs": [
-    {"name":"Body", "id":"bod", "value":4,"type":"primary"}
-  ]
+    {"name":"Body", "id":"bod", "value":6,"type":"primary"},{"name":"Agility", "id":"agl", "value":5,"type":"primary"},{"name":"Reaction", "id":"reac", "value":4,"type":"primary"},
+    {"name":"Strength", "id":"str", "value":8,"type":"primary"},{"name":"Willpower", "id":"will", "value":4,"type":"primary"},
+    {"name":"Logic", "id":"log", "value":4,"type":"primary"},{"name":"Intuition", "id":"int", "value":4,"type":"primary"},
+    {"name":"Charisma", "id":"cha", "value":4,"type":"primary"},{"name":"Edge", "id":"edge", "value":4,"type":"primary"},
+    {"name":"Edge Points", "id":"edgePts", "value":4,"type":"primary"},
+    {"name":"Essence", "id":"ess", "value":6,"type":"secondary"},{"name":"Magic", "id":"magOrRes", "value":6,"type":"secondary"},
+    {"name":"Initiative", "id":"init", "value":6,"type":"secondary","d6":4}, {"name":"Astral Initiative", "id":"astralMatInit", "value":6,"type":"secondary","d6":5},
+    {"name":"Composure", "id":"comp", "value":0,"type":"secondary"},{"name":"Judge Intentions", "id":"judge", "value":0,"type":"secondary"},
+    {"name":"Memory", "id":"ess", "value":0,"type":"secondary"},{"name":"Lift/Carry", "id":"lift", "value":"","type":"secondary"},
+    {"name":"Movement", "id":"mvmnt", "value":0,"type":"secondary"},
+    {"name":"Physical Limit", "id":"physLim", "value":6,"type":"limit"},{"name":"Mental Limit", "id":"menLim", "value":6,"type":"limit"},
+    {"name":"Social Limit", "id":"socLim", "value":6,"type":"limit"}
+  ],
+  "skills":[
+    {"name":"Archery","rtg":4,"attr":"agl","miscMods":[]}
+  ],
+  "contacts":[],
+  "gear":[],
+  "characterInfo":{
+    "name":"Blondie",
+    "player":"Michael K"
+  },
+  "qualities":[]
 }
